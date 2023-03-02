@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:givt_app_kids_game/game/game.dart';
 import 'package:givt_app_kids_game/l10n/l10n.dart';
 
+import 'package:givt_app_kids_game/givt/impact_goal/spinner/enter_username_screen.dart';
+
 class TitlePage extends StatelessWidget {
   const TitlePage({super.key});
 
@@ -72,7 +74,9 @@ class TitleView extends StatelessWidget {
             width: 250,
             height: 64,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push<void>(EnterUsernameScreen.route());
+              },
               child: const Center(child: Text("Idea 3")),
             ),
           ),
