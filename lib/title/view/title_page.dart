@@ -32,15 +32,65 @@ class TitleView extends StatelessWidget {
     final l10n = context.l10n;
 
     return Center(
-      child: SizedBox(
-        width: 250,
-        height: 64,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacement<void, void>(GamePage.route());
-          },
-          child: Center(child: Text(l10n.titleButtonStart)),
-        ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: 250,
+            height: 64,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Center(child: Text("Idea 1")),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: 250,
+            height: 64,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Center(child: Text("Idea 2/Variant 1")),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: 250,
+            height: 64,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Center(child: Text("Idea 2/Variant 2")),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: 250,
+            height: 64,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Center(child: Text("Idea 3")),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: 250,
+            height: 64,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacement<void, void>(GamePage.route());
+              },
+              child: const Center(child: Text("Unicorn Game")),
+            ),
+          ),
+        ],
       ),
     );
   }
