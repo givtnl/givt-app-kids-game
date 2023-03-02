@@ -9,7 +9,7 @@ platform :ios do
   desc "Push a new build to Testflight"
   lane :release do
     # if git_branch == "main"
-      app_identifier = "net.givtapp.kids.game.test"
+      app_identifier = "net.givtapp.kids.game"
       flavor = "development"
     # else
     #   app_identifier = "net.givtapp.v2.test"
