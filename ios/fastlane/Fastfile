@@ -26,6 +26,7 @@ platform :ios do
     Dir.chdir "../.." do
         sh("flutter", "packages", "get")
         sh("flutter", "clean")
+        sh("sudo", "gem", "install", "cocoapods")
         sh("flutter", "build", "ipa", "--flavor", flavor, "--target", "lib/main_#{flavor}.dart", "--build-number=#{build_number}")
     end
     build_app(
