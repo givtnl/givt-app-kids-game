@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/enter_username_screen.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/spinner/enter_username_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/enter_username_screen.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -35,7 +37,10 @@ class TitleView extends StatelessWidget {
             width: 250,
             height: 64,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push<void>(EnterUsernameScreenVar1.route());
+              },
               child: const Center(child: Text("Idea 1")),
             ),
           ),
