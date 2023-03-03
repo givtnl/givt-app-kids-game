@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_single_quotes, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/dircet_choice_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/direct_choice_screen.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/spinner/spinning_wheel_screen.dart';
 
@@ -88,32 +88,32 @@ class _EnterUsernameScreenVar1State extends State<EnterUsernameScreenVar1> {
               Spacer(
                 flex: 1,
               ),
-              _name.isEmpty
-                  ? SizedBox()
-                  : ElevatedButton(
-                      onPressed: () {
+              ElevatedButton(
+                onPressed: _name.isEmpty
+                    ? null
+                    : () {
                         onNameEntered(context);
                       },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF0A3C5F),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 23),
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Next",
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF0A3C5F),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 23),
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Next",
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
                     ),
+                  ),
+                ),
+              ),
               Spacer(
                 flex: 5,
               ),
