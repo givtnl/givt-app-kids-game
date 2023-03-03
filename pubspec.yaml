@@ -22,6 +22,8 @@ dependencies:
   intl: ^0.17.0
   mockingjay: ^0.3.0
   provider: ^6.0.5
+  flutter_fortune_wheel: ^1.2.0
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   bloc_test: ^9.1.1
