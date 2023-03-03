@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:givt_app_kids_game/game/game.dart';
-import 'package:givt_app_kids_game/l10n/l10n.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/spinner/enter_username_screen.dart';
 
-class TitlePage extends StatelessWidget {
-  const TitlePage({super.key});
+class StartPage extends StatelessWidget {
+  const StartPage({super.key});
 
   static Route<void> route() {
     return MaterialPageRoute<void>(
-      builder: (_) => const TitlePage(),
+      builder: (_) => const StartPage(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.titleAppBarTitle),
+        title: const Text('GIVT Kids Game'),
       ),
       body: const SafeArea(child: TitleView()),
     );
@@ -31,8 +27,6 @@ class TitleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -78,20 +72,6 @@ class TitleView extends StatelessWidget {
                 Navigator.of(context).push<void>(EnterUsernameScreen.route());
               },
               child: const Center(child: Text("Idea 3")),
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          SizedBox(
-            width: 250,
-            height: 64,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .pushReplacement<void, void>(GamePage.route());
-              },
-              child: const Center(child: Text("Unicorn Game")),
             ),
           ),
         ],
