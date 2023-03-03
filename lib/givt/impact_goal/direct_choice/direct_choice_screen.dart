@@ -30,9 +30,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
       body: SafeArea(
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(
-            horizontal: mediaQuery.size.width * 0.05,
-          ),
+          padding: EdgeInsets.zero,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -45,10 +43,10 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                   color: Color(0xFF0A3C5F),
                 ),
               ),
-              Spacer(),
+              Spacer(flex: 1),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  Spacer(flex: 2),
                   Column(
                     children: [
                       ElevatedButton(
@@ -79,6 +77,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                       )
                     ],
                   ),
+                  Spacer(flex: 1),
                   Column(
                     children: [
                       ElevatedButton(
@@ -109,6 +108,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                       )
                     ],
                   ),
+                  Spacer(flex: 1),
                   Column(
                     children: [
                       ElevatedButton(
@@ -139,6 +139,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                       )
                     ],
                   ),
+                  Spacer(flex: 2),
                 ],
               ),
               Spacer(flex: 5),

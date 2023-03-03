@@ -74,6 +74,31 @@ class _WorldLandingPageState extends State<WorldLandingPage> {
               ),
             ],
           ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF0A3C5F),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              child: SizedBox(
+                width: mediaQuery.size.width * 0.6,
+                height: mediaQuery.size.height * 0.1,
+                child: const Center(
+                  child: Text(
+                    "Play the game!",
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
