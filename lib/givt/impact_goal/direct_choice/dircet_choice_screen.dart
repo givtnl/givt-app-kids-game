@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/world_landing.dart';
 
-import 'package:givt_app_kids_game/givt/impact_goal/spinner/spinning_wheel_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/impact_goals.dart';
 
 class DirectChoiceGoals extends StatefulWidget {
   const DirectChoiceGoals({super.key});
@@ -18,6 +18,10 @@ class DirectChoiceGoals extends StatefulWidget {
 }
 
 class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
+  void trial() {
+    print(ImpactGoals.ecoVerse.title);
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -49,8 +53,8 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context)
-                              .push<void>(WorldLandingPage.route('ecoverse'));
+                          Navigator.of(context).push<void>(
+                              WorldLandingPage.route(ImpactGoals.ecoVerse));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 10.0,
@@ -61,12 +65,12 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                           ),
                         ),
                         child: SvgPicture.asset(
-                          'assets/images/ecoverse_square.svg',
+                          'assets/images/${ImpactGoals.ecoVerse.underscored_title}_square.svg',
                         ),
                       ),
                       SizedBox(height: mediaQuery.size.height * 0.025),
-                      const Text(
-                        "EcoVerse",
+                      Text(
+                        ImpactGoals.ecoVerse.title,
                         style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
@@ -80,7 +84,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push<void>(
-                              WorldLandingPage.route('critterland'));
+                              WorldLandingPage.route(ImpactGoals.critterland));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 10.0,
@@ -91,12 +95,12 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                           ),
                         ),
                         child: SvgPicture.asset(
-                          'assets/images/critterland_square.svg',
+                          'assets/images/${ImpactGoals.critterland.underscored_title}_square.svg',
                         ),
                       ),
                       SizedBox(height: mediaQuery.size.height * 0.025),
-                      const Text(
-                        "Critterland",
+                      Text(
+                        ImpactGoals.critterland.title,
                         style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
@@ -109,8 +113,8 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context)
-                              .push<void>(WorldLandingPage.route('haven'));
+                          Navigator.of(context).push<void>(
+                              WorldLandingPage.route(ImpactGoals.helpingHaven));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 10.0,
@@ -121,12 +125,12 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                           ),
                         ),
                         child: SvgPicture.asset(
-                          'assets/images/helping_haven_square.svg',
+                          'assets/images/${ImpactGoals.helpingHaven.underscored_title}_square.svg',
                         ),
                       ),
                       SizedBox(height: mediaQuery.size.height * 0.025),
-                      const Text(
-                        "Helping Haven",
+                      Text(
+                        ImpactGoals.helpingHaven.title,
                         style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,

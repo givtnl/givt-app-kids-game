@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'package:givt_app_kids_game/givt/impact_goal/spinner/spinning_wheel_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/impact_goals.dart';
 
 class WorldLandingPage extends StatefulWidget {
-  String worldKey;
-  WorldLandingPage({this.worldKey = 'critterland', super.key});
+  ImpactGoals goal;
+  WorldLandingPage({this.goal = ImpactGoals.critterland, super.key});
 
-  static Route<void> route(String passed) {
+  static Route<void> route(ImpactGoals passed) {
     return MaterialPageRoute<void>(
       builder: (_) => WorldLandingPage(
-        worldKey: passed,
+        goal: passed,
       ),
     );
   }
@@ -20,32 +19,15 @@ class WorldLandingPage extends StatefulWidget {
 }
 
 class _WorldLandingPageState extends State<WorldLandingPage> {
-  Map world = {
-    'critterland': {
-      'title': 'Critterland',
-      'lowercase': 'critterland',
-      'backgroundColor': Color(0xFFEFF8FD)
-    },
-    'ecoverse': {
-      'title': 'EcoVerse',
-      'lowercase': 'ecoverse',
-      'backgroundColor': Color(0xFFD6EDD8)
-    },
-    'haven': {
-      'title': 'Helping Haven',
-      'lowercase': 'helping_haven',
-      'backgroundColor': Color(0xFFFFEFE9)
-    }
-  };
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      backgroundColor: world[widget.worldKey]['backgroundColor'] as Color,
+      backgroundColor: widget.goal.background_color,
       body: Stack(
         children: [
           SvgPicture.asset(
-            'assets/images/${world[widget.worldKey]['lowercase']}_full_backdrop.svg',
+            'assets/images/${widget.goal.underscored_title}_full_backdrop.svg',
             alignment: Alignment.center,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -69,14 +51,14 @@ class _WorldLandingPageState extends State<WorldLandingPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Hi, I’m Givy, welcome to ${world[widget.worldKey]['title']}",
-                            style: TextStyle(
+                            "Hi, I’m Givy, welcome to ${widget.goal.title}",
+                            style: const TextStyle(
                               fontSize: 26,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF0A3C5F),
                             ),
                           ),
-                          Text(
+                          const Text(
                             "I’ll be your guide in this world to make this a great place for all people.",
                             style: TextStyle(
                               fontSize: 26,
