@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/world_landing.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/spinner/spinning_wheel_screen.dart';
 
@@ -49,7 +50,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context)
-                              .push<void>(DirectChoiceGoals.route());
+                              .push<void>(WorldLandingPage.route('ecoverse'));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 10.0,
@@ -78,8 +79,8 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context)
-                              .push<void>(DirectChoiceGoals.route());
+                          Navigator.of(context).push<void>(
+                              WorldLandingPage.route('critterland'));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 10.0,
@@ -109,7 +110,7 @@ class _DirectChoiceGoalsState extends State<DirectChoiceGoals> {
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context)
-                              .push<void>(DirectChoiceGoals.route());
+                              .push<void>(WorldLandingPage.route('haven'));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 10.0,
