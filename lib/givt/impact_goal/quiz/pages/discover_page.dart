@@ -4,14 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_screen.dart';
 
-enum ImpactGoals { people, animal, health, nature }
-
-// extension RequestSortType on ImpactGoals {
-//   static ImpactGoals get(String goal) {
-
-//   }
-// }
-
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
 
@@ -202,18 +194,18 @@ class _ImpactGoalState extends State<ImpactGoal> {
             ),
             child: SvgPicture.asset(
               'assets/images/${goal}_$stage.svg',
-              height: 250,
+              height: 200,
             ),
           ),
-          // SizedBox(height: mediaQuery.size.height * 0.025),
-          // Text(
-          //   'Teddy Bear',
-          //   style: TextStyle(
-          //     fontSize: 35,
-          //     fontWeight: FontWeight.bold,
-          //     color: Color(0xFF0A3C5F),
-          //   ),
-          // )
+          SizedBox(height: mediaQuery.size.height * 0.025),
+          Text(
+            widget.goalText,
+            style: const TextStyle(
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF0A3C5F),
+            ),
+          )
         ],
       ),
     );
