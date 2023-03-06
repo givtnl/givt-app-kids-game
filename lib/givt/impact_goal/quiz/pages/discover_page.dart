@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_animal.dart';
-import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_nature.dart';
-import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_health.dart';
-import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_people.dart';
+
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_screen.dart';
 
 enum ImpactGoals { people, animal, health, nature }
 
@@ -55,21 +54,27 @@ class _DiscoverPageState extends State<DiscoverPage> {
         }
       });
 
+      ImpactGoalWorlds world;
+
       switch (outcome) {
         case 'animal':
-          Navigator.of(context).push(ImpactGoalAnimal.route());
+          world = ImpactGoalWorlds.critterCountry;
           break;
         case 'nature':
-          Navigator.of(context).push(ImpactGoalNature.route());
+          world = ImpactGoalWorlds.wildWoods;
           break;
         case 'health':
-          Navigator.of(context).push(ImpactGoalHealth.route());
+          world = ImpactGoalWorlds.rescueRealm;
           break;
         case 'people':
-          Navigator.of(context).push(ImpactGoalPeople.route());
+          world = ImpactGoalWorlds.kindnessKingdom;
           break;
         default:
+          world = ImpactGoalWorlds.wildWoods;
       }
+
+      Navigator.of(context).push(ImpactGoalWorldScreen.route(world));
+
       return;
     }
     choices[selectedGoal] = choices[selectedGoal]! + 1;
