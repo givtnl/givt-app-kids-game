@@ -190,7 +190,7 @@ class _ImpactGoalState extends State<ImpactGoal> {
             },
             style: ElevatedButton.styleFrom(
               elevation: 0,
-              backgroundColor: const Color(0xFFFFF9F3),
+              backgroundColor: const Color.fromARGB(0, 255, 249, 243),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(105),
               ),
