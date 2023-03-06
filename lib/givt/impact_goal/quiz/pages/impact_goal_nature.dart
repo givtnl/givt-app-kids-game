@@ -5,6 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 class ImpactGoalNature extends StatefulWidget {
   const ImpactGoalNature({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => const ImpactGoalNature(),
+    );
+  }
+
   @override
   State<ImpactGoalNature> createState() => _ImpactGoalNatureState();
 }

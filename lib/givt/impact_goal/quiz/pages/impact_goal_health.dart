@@ -4,6 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 class ImpactGoalHealth extends StatefulWidget {
   const ImpactGoalHealth({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => const ImpactGoalHealth(),
+    );
+  }
+
   @override
   State<ImpactGoalHealth> createState() => _ImpactGoalHealthState();
 }

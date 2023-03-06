@@ -4,6 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 class ImpactGoalAnimal extends StatefulWidget {
   const ImpactGoalAnimal({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => const ImpactGoalAnimal(),
+    );
+  }
+
   @override
   State<ImpactGoalAnimal> createState() => _ImpactGoalAnimalState();
 }

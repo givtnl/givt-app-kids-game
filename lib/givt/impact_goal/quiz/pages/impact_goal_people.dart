@@ -4,6 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 class ImpactGoalPeople extends StatefulWidget {
   const ImpactGoalPeople({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => const ImpactGoalPeople(),
+    );
+  }
+
   @override
   State<ImpactGoalPeople> createState() => _ImpactGoalPeopleState();
 }
