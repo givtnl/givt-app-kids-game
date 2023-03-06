@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_single_quotes, prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -17,21 +15,21 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFF5EC),
+      backgroundColor: const Color(0xFFFFF5EC),
       body: Column(
         children: [
-          Spacer(
+          const Spacer(
             flex: 2,
           ),
-          Text(
-            "Which world would you like to discover?",
+          const Text(
+            'Which world would you like to discover?',
             style: TextStyle(
               fontSize: 30,
-              color: const Color(0xFF405A66),
+              color: Color(0xFF405A66),
               fontWeight: FontWeight.bold,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: ImpactGoalWorlds.values.map((world) {
@@ -51,15 +49,15 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
                           width: 230,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Text(
                         world.name,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 30,
-                          color: const Color(0xFF405A66),
+                          color: Color(0xFF405A66),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -69,7 +67,7 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
               );
             }).toList(),
           ),
-          Spacer(
+          const Spacer(
             flex: 2,
           ),
         ],

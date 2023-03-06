@@ -3,12 +3,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
-
-import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_selection_screen.dart';
 
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
+
 class ImpactGoalWorldScreen extends StatefulWidget {
-  ImpactGoalWorldScreen({super.key, required this.impactGoalWorld});
+  ImpactGoalWorldScreen({
+    required this.impactGoalWorld,
+    super.key,
+  });
 
   static Route<void> route(ImpactGoalWorlds world) {
     return MaterialPageRoute<void>(
@@ -58,7 +61,7 @@ class _ImpactGoalWorldScreenState extends State<ImpactGoalWorldScreen> {
                     Container(
                       padding: EdgeInsets.all(40),
                       child: Text(
-                        "Great, based on your answers you could be of great help\nin ${_selectedWorld.name}. Are you ready to explore?",
+                        'Great, based on your answers you could be of great help\nin ${_selectedWorld.name}. Are you ready to explore?',
                         style: TextStyle(
                           fontSize: 25,
                           color: const Color(0xFF405A66),
