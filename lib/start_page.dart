@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/enter_username_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/game_name_choice/name_choice_screen.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/spinner/enter_username_screen.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/enter_username_screen.dart';
@@ -78,6 +79,22 @@ class TitleView extends StatelessWidget {
               },
               child: const Center(child: Text("Idea 3")),
             ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: 250,
+            height: 64,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push<void>(NameChoice.route());
+              },
+              child: const Center(child: Text("Choose Name")),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
           ),
         ],
       ),
