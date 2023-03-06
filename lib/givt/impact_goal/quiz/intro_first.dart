@@ -22,7 +22,7 @@ class IntroFirst extends StatelessWidget {
           ),
           Positioned(
             top: 280,
-            left: 120,
+            left: 80,
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(IntroSecond.route());

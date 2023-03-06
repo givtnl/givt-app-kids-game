@@ -22,21 +22,21 @@ class IntroFinal extends StatelessWidget {
           ),
           Positioned(
             top: 280,
-            left: 120,
+            left: 230,
             child: Image.asset(
               'assets/images/givy_solar_final.png',
               fit: BoxFit.fill,
             ),
           ),
           Positioned(
-            top: 450,
-            left: 480,
+            top: 430,
+            left: 400,
             child: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(DiscoverWorldPage.route());
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF56BFE0),
+                backgroundColor: const Color(0xFFFFB059),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
@@ -45,9 +45,9 @@ class IntroFinal extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 23),
                 alignment: Alignment.center,
                 child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 120),
                   child: Text(
-                    'Yes! Let’s go',
+                    'Let’s go',
                     style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
