@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/intro_first.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/enter_username_screen.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/game_name_choice/name_choice_screen.dart';
 
@@ -52,7 +54,9 @@ class TitleView extends StatelessWidget {
             width: 250,
             height: 64,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(IntroFirst.route());
+              },
               child: const Center(child: Text("Idea 2/Variant 1")),
             ),
           ),
