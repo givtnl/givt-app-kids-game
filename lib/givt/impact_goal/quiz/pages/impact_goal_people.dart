@@ -48,7 +48,7 @@ class _ImpactGoalPeopleState extends State<ImpactGoalPeople> {
                   left: 250,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Great, based on your skills and preferences, you could be of great help in Helping Haven.",
                         style: TextStyle(
