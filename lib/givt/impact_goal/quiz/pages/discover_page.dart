@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goals.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
@@ -96,7 +97,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   .map(
                     (goal) => ImpactGoal(
                       goal: goal,
-                      goalText: '',
+                      goalText: ImpactGoals.values
+                          .firstWhere((element) => element.name == goal)
+                          .description[stage - 1],
                       stage: stage,
                       onPressed: (isSelected) {
                         setState(() {
@@ -198,14 +201,16 @@ class _ImpactGoalState extends State<ImpactGoal> {
             ),
           ),
           SizedBox(height: mediaQuery.size.height * 0.025),
-          Text(
-            widget.goalText,
-            style: const TextStyle(
-              fontSize: 35,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF0A3C5F),
-            ),
-          )
+          ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 250),
+              child: Text(
+                widget.goalText,
+                style: const TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF0A3C5F),
+                ),
+              )),
         ],
       ),
     );

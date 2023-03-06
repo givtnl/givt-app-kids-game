@@ -1,26 +1,72 @@
-enum ImpactGoalWorlds {
+enum ImpactGoals {
   people(
-    name: 'Wild Woods',
-    image: 'assets/images/impact_goal_nature.svg',
+    name: 'people',
+    images: [
+      'assets/images/people_1.svg',
+      'assets/images/people_2.svg',
+      'assets/images/people_3.svg',
+      'assets/images/people_4.svg'
+    ],
+    description: [
+      'Walkie  Talkies',
+      'Community Helpers',
+      'Reading Peoples minds',
+      'Helping out at a food bank',
+    ],
   ),
   animal(
-    name: 'Critter Country',
-    image: 'assets/images/impact_goal_animal.svg',
+    name: 'animal',
+    images: [
+      'assets/images/animal_1.svg',
+      'assets/images/animal_2.svg',
+      'assets/images/animal_3.svg',
+      'assets/images/animal_4.svg'
+    ],
+    description: [
+      'Teddy Bear',
+      'Animal Rescue Team',
+      'Talk to animals',
+      'Helping out at an animal shelter',
+    ],
   ),
   health(
-    name: 'Kindness Kingdom',
-    image: 'assets/images/impact_goal_people.svg',
+    name: 'health',
+    images: [
+      'assets/images/nature_1.svg',
+      'assets/images/nature_2.svg',
+      'assets/images/nature_3.svg',
+      'assets/images/nature_4.svg'
+    ],
+    description: [
+      'Lego set',
+      'Emergency Response Squad',
+      'Fix things by snapping your fingers',
+      'Learning first aid',
+    ],
   ),
   nature(
-    name: 'Rescue Realm',
-    image: 'assets/images/impact_goal_health.svg',
+    name: 'nature',
+    images: [
+      'assets/images/nature_1.svg',
+      'assets/images/nature_2.svg',
+      'assets/images/nature_3.svg',
+      'assets/images/nature_4.svg'
+    ],
+    description: [
+      'Camera',
+      'Nature Explorers',
+      'Control the weather',
+      'Plant a community garden',
+    ],
   );
 
-  const ImpactGoalWorlds({
+  const ImpactGoals({
     required this.name,
-    required this.image,
+    required this.images,
+    required this.description,
   });
 
   final String name;
-  final String image;
+  final List<String> images;
+  final List<String> description;
 }
