@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/discover_page.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble.dart';
 
 class IntroNameFinal extends StatelessWidget {
   const IntroNameFinal({
@@ -29,40 +30,15 @@ class IntroNameFinal extends StatelessWidget {
             'assets/images/solar_bg.svg',
             fit: BoxFit.fill,
           ),
-          Positioned(
-            top: 170,
-            left: 130,
-            child: Image.asset(
-              'assets/images/givy_name_final.png',
-              fit: BoxFit.fill,
-            ),
+          GivyBubble(
+            texts: [
+              '''
+Hey $name! Nice to meet you. To decide which world we should 
+help first, can you answer some questions?'''
+            ],
           ),
           Positioned(
-            top: 195,
-            left: 305,
-            child: Column(
-              children: [
-                Text(
-                  'Hey $name! Nice to meet you. To decide which world ',
-                  style: const TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF0A3C5F),
-                  ),
-                ),
-                const Text(
-                  'we should help first, can you answer some questions?',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF0A3C5F),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-            top: 370,
+            top: 400,
             left: 350,
             child: ElevatedButton(
               onPressed: () => Navigator.of(context).push(
