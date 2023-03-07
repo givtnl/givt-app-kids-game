@@ -14,6 +14,7 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFFFFF5EC),
       body: Column(
@@ -30,42 +31,45 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: ImpactGoalWorlds.values.map((world) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pop(world);
-                },
-                child: SizedBox(
-                  width: 280,
-                  height: 280,
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(35),
-                        child: SvgPicture.asset(
-                          world.image,
-                          width: 230,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: ImpactGoalWorlds.values.map((world) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop(world);
+                  },
+                  child: SizedBox(
+                    width: mediaQuery.size.width * 0.24,
+                    height: mediaQuery.size.width * 0.3,
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(35),
+                          child: SvgPicture.asset(
+                            world.image,
+                            width: mediaQuery.size.width * 0.22,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        world.name,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 30,
-                          color: Color(0xFF405A66),
-                          fontWeight: FontWeight.bold,
+                        const SizedBox(
+                          height: 30,
                         ),
-                      ),
-                    ],
+                        Text(
+                          world.name,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 30,
+                            color: Color(0xFF405A66),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              );
-            }).toList(),
+                );
+              }).toList(),
+            ),
           ),
           const Spacer(
             flex: 2,

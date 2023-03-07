@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_screen.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goals.dart';
 
 class DiscoverPage extends StatefulWidget {
@@ -101,9 +102,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           .firstWhere((element) => element.name == goal)
                           .description[stage - 1],
                       stage: stage,
-                      onPressed: (isSelected) {
+                      isSelected: selectedGoal == goal,
+                      onPressed: () {
                         setState(() {
-                          selectedGoal = goal;
+                          selectedGoal = goal == selectedGoal ? "" : goal;
                         });
                       },
                     ),
@@ -144,50 +146,33 @@ class _DiscoverPageState extends State<DiscoverPage> {
   }
 }
 
-class ImpactGoal extends StatefulWidget {
-  const ImpactGoal({
-    super.key,
-    required this.goal,
-    required this.stage,
-    required this.onPressed,
-    required this.goalText,
-  });
+class ImpactGoal extends StatelessWidget {
+  const ImpactGoal(
+      {super.key,
+      required this.goal,
+      required this.stage,
+      required this.onPressed,
+      required this.goalText,
+      required this.isSelected});
 
   final String goal;
   final String goalText;
   final int stage;
-  final Function(bool) onPressed;
+  final void Function() onPressed;
+  final bool isSelected;
 
-  @override
-  State<ImpactGoal> createState() => _ImpactGoalState();
-}
-
-class _ImpactGoalState extends State<ImpactGoal> {
-  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final goal = widget.goal;
-    final stage = widget.stage;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: isSelected ? const Color(0x0f89625c) : null,
         borderRadius: BorderRadius.circular(20),
-        // border: isSelected
-        //     ? Border.all(
-        //         width: 2,
-        //       )
-        //     : null,
       ),
       child: Column(
         children: [
           ElevatedButton(
-            onPressed: () {
-              setState(() {
-                isSelected = !isSelected;
-                widget.onPressed(isSelected);
-              });
-            },
+            onPressed: onPressed,
             style: ElevatedButton.styleFrom(
               elevation: 0,
               backgroundColor: const Color.fromARGB(0, 255, 249, 243),
@@ -204,7 +189,8 @@ class _ImpactGoalState extends State<ImpactGoal> {
           ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 250),
               child: Text(
-                widget.goalText,
+                goalText,
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
