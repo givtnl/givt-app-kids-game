@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/discover_world_page.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/enter_username_page_2.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble.dart';
 
 class IntroFinal extends StatelessWidget {
   const IntroFinal({super.key});
@@ -21,13 +22,8 @@ class IntroFinal extends StatelessWidget {
             'assets/images/solar_bg.svg',
             fit: BoxFit.fill,
           ),
-          Positioned(
-            top: 280,
-            left: 230,
-            child: Image.asset(
-              'assets/images/givy_solar_final.png',
-              fit: BoxFit.fill,
-            ),
+          const GivyBubble(
+            texts: ['Are you up for the challenge?'],
           ),
           Positioned(
             top: 430,
