@@ -15,19 +15,13 @@ const double BUBBLE_RADIUS = 16;
 class ChatBubble extends StatelessWidget {
   final double bubbleRadius;
   final bool tail;
-  final TextStyle textStyle;
   final Widget text;
 
   const ChatBubble({
-    Key? key,
     required this.text,
+    Key? key,
     this.bubbleRadius = BUBBLE_RADIUS,
     this.tail = true,
-    this.textStyle = const TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-      color: Color(0xFF0A3C5F),
-    ),
   }) : super(key: key);
 
   ///chat bubble builder method
