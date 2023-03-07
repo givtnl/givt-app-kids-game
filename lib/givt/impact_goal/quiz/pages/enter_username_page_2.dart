@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/intro_name_final.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble.dart';
 
 class EnterUsernameGalaxyScreen extends StatefulWidget {
   const EnterUsernameGalaxyScreen({super.key});
@@ -53,12 +54,13 @@ class _EnterUsernameGalaxyScreenState extends State<EnterUsernameGalaxyScreen> {
                   const Spacer(
                     flex: 3,
                   ),
-                  Image.asset(
-                    'assets/images/givy_name_galaxy.png',
+                  const GivyBubble(
+                    texts: [
+                      '''Wait, I didn't get your name. 
+Sometimes I forget when I'm in a rush!'''
+                    ],
                   ),
-                  const Spacer(
-                    flex: 3,
-                  ),
+                  const Spacer(),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),

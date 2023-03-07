@@ -14,6 +14,7 @@ class IntroFirst extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -23,12 +24,26 @@ class IntroFirst extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () => Navigator.of(context).push(IntroFinal.route()),
-            child: const GivyBubble(
-              texts: [
-                '''Hi, I’m Givy, I need your help! I’ve been flying around our solar 
+            child: SafeArea(
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(
+                  horizontal: mediaQuery.size.width * 0.25,
+                ),
+                child: Column(
+                  children: const [
+                    Spacer(),
+                    GivyBubble(
+                      texts: [
+                        '''Hi, I’m Givy, I need your help! I’ve been flying around our solar 
 system and all the worlds seem to be falling apart...''',
-                'I need help fixing them before it’s too late...'
-              ],
+                        'I need help fixing them before it’s too late...'
+                      ],
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
