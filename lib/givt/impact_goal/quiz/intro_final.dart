@@ -15,6 +15,7 @@ class IntroFinal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -22,8 +23,22 @@ class IntroFinal extends StatelessWidget {
             'assets/images/solar_bg.svg',
             fit: BoxFit.fill,
           ),
-          const GivyBubble(
-            texts: ['Are you up for the challenge?'],
+          SafeArea(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                horizontal: mediaQuery.size.width * 0.25,
+              ),
+              child: Column(
+                children: const [
+                  Spacer(),
+                  GivyBubble(
+                    texts: ['Are you up for the challenge?'],
+                  ),
+                  Spacer(),
+                ],
+              ),
+            ),
           ),
           Positioned(
             top: 430,
