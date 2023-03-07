@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/game_name_choice/name_choice_screen.dart';
 import 'package:givt_app_kids_game/start_page.dart';
 
 class App extends StatelessWidget {
@@ -17,7 +18,7 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StartPage(),
+      home: NameChoice(),
     );
   }
 }

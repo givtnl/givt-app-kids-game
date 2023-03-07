@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/world_landing.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/impact_goals.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/intro_first.dart';
 
 class NameChoice extends StatefulWidget {
   const NameChoice({super.key});
@@ -38,7 +39,7 @@ class _NameChoiceState extends State<NameChoice> {
     Color(0xFFFAE79C),
     Color(0xFFF8B498),
     Color(0xFFAFDBB4),
-    Color(0xFF6E97FD),
+    Color.fromARGB(255, 151, 180, 253),
   ];
 
   @override
@@ -88,7 +89,9 @@ class _NameChoiceState extends State<NameChoice> {
                                 borderRadius: BorderRadius.circular(105.0),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(IntroFirst.route());
+                            },
                             child: Container(
                               alignment: Alignment.center,
                               padding:
