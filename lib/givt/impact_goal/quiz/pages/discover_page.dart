@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_single_quotes
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_screen.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goals.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble_static.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
@@ -34,6 +37,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
     'nature',
     'health',
     'people',
+  ];
+
+  final _questions = [
+    "If you can choose only 1 item to take on holiday, what would it be?",
+    "Which television show sounds the most interesting to you?",
+    "If you could have a super power, which would you choose?",
+    "Which of these activities would you be most interested in trying out?",
   ];
 
   void nextStage() {
@@ -89,8 +99,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(
-              'assets/images/stage_$stage.png',
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: GivyBubbleStatic(
+                text: _questions[stage - 1],
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

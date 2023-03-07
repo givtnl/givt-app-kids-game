@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_selection_screen.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble_static.dart';
 
 class ImpactGoalWorldScreen extends StatefulWidget {
   ImpactGoalWorldScreen({
@@ -42,36 +43,9 @@ class _ImpactGoalWorldScreenState extends State<ImpactGoalWorldScreen> {
           Positioned(
             left: 50,
             top: 50,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 65, right: 30),
-                  child: Image.asset(
-                    'assets/images/givy.png',
-                    fit: BoxFit.fill,
-                    scale: 1.5,
-                  ),
-                ),
-                Stack(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/images/bubble.svg',
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(40),
-                      child: Text(
-                        'Great, based on your answers you could be of great help\nin ${_selectedWorld.name}. Are you ready to explore?',
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: const Color(0xFF405A66),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
+            child: GivyBubbleStatic(
+              text:
+                  "Great, based on your answers you could be of great help in ${_selectedWorld.name}. Are you ready to explore?",
             ),
           ),
           Positioned(
