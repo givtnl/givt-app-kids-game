@@ -170,7 +170,7 @@ class ImpactGoal extends StatelessWidget {
         color: isSelected ? const Color(0x0f89625c) : null,
         borderRadius: BorderRadius.circular(20),
         border: isSelected
-            ? Border.all(width: 3, color: const Color(0x0f89625c))
+            ? Border.all(width: 3, color: const Color(0xFF0A3C5F))
             : null,
       ),
       child: Padding(
