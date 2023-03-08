@@ -5,10 +5,12 @@ import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/chat_bubble.dar
 class GivyBubble extends StatefulWidget {
   const GivyBubble({
     required this.texts,
+    this.onNavigateToNextPage,
     super.key,
   });
 
   final List<String> texts;
+  final VoidCallback? onNavigateToNextPage;
 
   @override
   State<GivyBubble> createState() => _GivyBubbleState();
@@ -21,6 +23,8 @@ class _GivyBubbleState extends State<GivyBubble> {
 
   void onNextText() {
     if (currentIndex == textsIndex - 1) {
+      if (widget.onNavigateToNextPage != null)
+        widget.onNavigateToNextPage?.call();
       return;
     }
     currentIndex++;
@@ -49,10 +53,11 @@ class _GivyBubbleState extends State<GivyBubble> {
         Column(
           children: [
             ChatBubble(
+              onTap: widget.texts.length > 1 ? onNextText : null,
               text: AnimatedTextKit(
                 key: UniqueKey(),
                 isRepeatingAnimation: false,
-                onTap: onNextText,
+                displayFullTextOnTap: true,
                 animatedTexts: [
                   TypewriterAnimatedText(
                     currentText,

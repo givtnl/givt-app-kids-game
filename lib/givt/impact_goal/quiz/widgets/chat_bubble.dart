@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const double BUBBLE_RADIUS = 16;
@@ -16,9 +17,11 @@ class ChatBubble extends StatelessWidget {
   final double bubbleRadius;
   final bool tail;
   final Widget text;
+  final VoidCallback? onTap;
 
   const ChatBubble({
     required this.text,
+    this.onTap,
     Key? key,
     this.bubbleRadius = BUBBLE_RADIUS,
     this.tail = true,
@@ -50,12 +53,21 @@ class ChatBubble extends StatelessWidget {
               child: Stack(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(24, 12, 30, 24),
+                    padding: const EdgeInsets.fromLTRB(24, 12, 30, 16),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         text,
+                        Visibility(
+                          visible: onTap != null,
+                          child: IconButton(
+                            onPressed: onTap,
+                            icon: const Icon(
+                              Icons.arrow_forward,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

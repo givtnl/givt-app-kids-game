@@ -22,27 +22,27 @@ class IntroFirst extends StatelessWidget {
             'assets/images/solar_bg.svg',
             fit: BoxFit.fill,
           ),
-          GestureDetector(
-            onTap: () => Navigator.of(context).push(IntroFinal.route()),
-            child: SafeArea(
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(
-                  horizontal: mediaQuery.size.width * 0.25,
-                ),
-                child: Column(
-                  children: const [
-                    Spacer(),
-                    GivyBubble(
-                      texts: [
-                        '''Hi, I’m Givy, I need your help! I’ve been flying around our solar 
-system and all the worlds seem to be falling apart...''',
-                        'I need help fixing them before it’s too late...'
-                      ],
+          SafeArea(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                horizontal: mediaQuery.size.width * 0.25,
+              ),
+              child: Column(
+                children: [
+                  const Spacer(),
+                  GivyBubble(
+                    onNavigateToNextPage: () => Navigator.of(context).push(
+                      IntroFinal.route(),
                     ),
-                    Spacer(),
-                  ],
-                ),
+                    texts: [
+                      '''Hi, I’m Givy, I need your help! I’ve been flying around our solar 
+system and all the worlds seem to be falling apart...''',
+                      'I need help fixing them before it’s too late...'
+                    ],
+                  ),
+                  const Spacer(),
+                ],
               ),
             ),
           ),
