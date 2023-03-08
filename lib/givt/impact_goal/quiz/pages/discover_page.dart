@@ -81,6 +81,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    final buttonText = stage == 4 ? 'Calculate' : 'Next';
     return Scaffold(
       backgroundColor: const Color(0xFFFFF9F3),
       body: Padding(
@@ -105,7 +106,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       isSelected: selectedGoal == goal,
                       onPressed: () {
                         setState(() {
-                          selectedGoal = goal == selectedGoal ? "" : goal;
+                          selectedGoal = goal == selectedGoal ? '' : goal;
                         });
                       },
                     ),
@@ -125,11 +126,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 23),
                   alignment: Alignment.center,
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
-                      'Next',
-                      style: TextStyle(
+                      buttonText,
+                      style: const TextStyle(
                         fontSize: 30,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -168,36 +169,41 @@ class ImpactGoal extends StatelessWidget {
       decoration: BoxDecoration(
         color: isSelected ? const Color(0x0f89625c) : null,
         borderRadius: BorderRadius.circular(20),
+        border: isSelected
+            ? Border.all(width: 3, color: const Color(0x0f89625c))
+            : null,
       ),
-      child: Column(
-        children: [
-          ElevatedButton(
-            onPressed: onPressed,
-            style: ElevatedButton.styleFrom(
-              elevation: 0,
-              backgroundColor: const Color.fromARGB(0, 255, 249, 243),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(105),
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: onPressed,
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                shadowColor: Colors.transparent,
+                backgroundColor: Colors.transparent,
+              ),
+              child: SvgPicture.asset(
+                'assets/images/${goal}_$stage.svg',
+                height: 150,
               ),
             ),
-            child: SvgPicture.asset(
-              'assets/images/${goal}_$stage.svg',
-              height: 200,
-            ),
-          ),
-          SizedBox(height: mediaQuery.size.height * 0.025),
-          ConstrainedBox(
+            SizedBox(height: mediaQuery.size.height * 0.025),
+            ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 250),
               child: Text(
                 goalText,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 26,
+                  fontSize: 23,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF0A3C5F),
                 ),
-              )),
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
