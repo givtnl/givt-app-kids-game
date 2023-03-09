@@ -8,6 +8,7 @@ import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goals.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble_static.dart';
+import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/loading_screen.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
@@ -77,7 +78,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
           world = ImpactGoalWorlds.wildWoods;
       }
 
-      Navigator.of(context).push(ImpactGoalWorldScreen.route(world));
+      Navigator.of(context).push(LoadingScreen.route(world));
 
       return;
     }
