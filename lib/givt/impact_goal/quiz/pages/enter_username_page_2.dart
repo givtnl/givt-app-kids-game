@@ -28,6 +28,8 @@ class _EnterUsernameGalaxyScreenState extends State<EnterUsernameGalaxyScreen> {
       return;
     }
 
+    FocusManager.instance.primaryFocus?.unfocus();
+
     AudioPlayerHelper.playHeavyClick();
 
     Navigator.of(context).push<void>(
