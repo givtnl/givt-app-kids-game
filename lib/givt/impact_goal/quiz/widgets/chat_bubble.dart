@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -61,10 +63,35 @@ class ChatBubble extends StatelessWidget {
                         text,
                         Visibility(
                           visible: onTap != null,
-                          child: IconButton(
-                            onPressed: onTap,
-                            icon: const Icon(
-                              Icons.arrow_forward,
+                          child: GestureDetector(
+                            onTap: onTap,
+                            child: Container(
+                              margin: EdgeInsets.only(top: 15),
+                              child: Stack(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: const Color(0xFFFFB059),
+                                    radius: 24,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(4),
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      radius: 20,
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_right,
+                                    color: Color(0xFF0A3C5F),
+                                    size: 50,
+                                  ),
+                                  // IconButton(
+                                  //   onPressed: onTap,
+                                  //   iconSize: 50,
+                                  //   icon: const
+                                  // ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
