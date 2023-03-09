@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/discover_world_page.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/enter_username_page_2.dart';
@@ -45,11 +44,9 @@ class IntroFinal extends StatelessWidget {
             top: 430,
             left: 400,
             child: ElevatedButton(
-              onPressed: () {
-                HapticFeedback.heavyImpact();
-
-                Navigator.of(context).push(EnterUsernameGalaxyScreen.route());
-              },
+              onPressed: () => Navigator.of(context).push(
+                EnterUsernameGalaxyScreen.route(),
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFFFB059),
                 shape: RoundedRectangleBorder(

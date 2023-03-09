@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world_selection_screen.dart';
@@ -56,7 +55,7 @@ class _ImpactGoalWorldScreenState extends State<ImpactGoalWorldScreen> {
                 width: 750,
                 height: 82,
                 child: ElevatedButton(
-                  onPressed: HapticFeedback.heavyImpact,
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0A3C5F),
                     shape: RoundedRectangleBorder(
@@ -83,7 +82,6 @@ class _ImpactGoalWorldScreenState extends State<ImpactGoalWorldScreen> {
             bottom: 10,
             child: GestureDetector(
               onTap: () {
-                HapticFeedback.lightImpact();
                 Navigator.of(context)
                     .push<ImpactGoalWorlds>(
                   ImpactGoalWorldSelectionScreen.route(),

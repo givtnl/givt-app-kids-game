@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/intro_name_final.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble.dart';
@@ -27,8 +26,6 @@ class _EnterUsernameGalaxyScreenState extends State<EnterUsernameGalaxyScreen> {
     if (_name.isEmpty) {
       return;
     }
-    HapticFeedback.heavyImpact();
-
     Navigator.of(context).push<void>(
       IntroNameFinal.route(
         name: _name,
