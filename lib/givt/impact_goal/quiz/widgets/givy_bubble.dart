@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/chat_bubble.dart';
 
 class GivyBubble extends StatefulWidget {
@@ -22,6 +23,8 @@ class _GivyBubbleState extends State<GivyBubble> {
   int textsIndex = 0;
 
   void onNextText() {
+    HapticFeedback.lightImpact();
+
     if (currentIndex == textsIndex - 1) {
       if (widget.onNavigateToNextPage != null)
         widget.onNavigateToNextPage?.call();

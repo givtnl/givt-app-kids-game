@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/world_landing.dart';
 
@@ -90,6 +91,8 @@ class _NameChoiceState extends State<NameChoice> {
                               ),
                             ),
                             onPressed: () {
+                              HapticFeedback.heavyImpact();
+
                               Navigator.of(context).push(IntroFirst.route());
                             },
                             child: Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
@@ -38,6 +39,7 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
               children: ImpactGoalWorlds.values.map((world) {
                 return GestureDetector(
                   onTap: () {
+                    HapticFeedback.lightImpact();
                     Navigator.of(context).pop(world);
                   },
                   child: SizedBox(
