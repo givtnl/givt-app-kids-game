@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
+import 'package:givt_app_kids_game/utils/audia_player_helper.dart';
 
 class ImpactGoalWorldSelectionScreen extends StatelessWidget {
   const ImpactGoalWorldSelectionScreen({super.key});
@@ -38,6 +39,7 @@ class ImpactGoalWorldSelectionScreen extends StatelessWidget {
               children: ImpactGoalWorlds.values.map((world) {
                 return GestureDetector(
                   onTap: () {
+                    AudioPlayerHelper.playLightClick();
                     Navigator.of(context).pop(world);
                   },
                   child: SizedBox(

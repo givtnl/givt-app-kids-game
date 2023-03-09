@@ -6,6 +6,7 @@ import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/world_landing.
 
 import 'package:givt_app_kids_game/givt/impact_goal/direct_choice/impact_goals.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/intro_first.dart';
+import 'package:givt_app_kids_game/utils/audia_player_helper.dart';
 
 class NameChoice extends StatefulWidget {
   const NameChoice({super.key});
@@ -90,6 +91,7 @@ class _NameChoiceState extends State<NameChoice> {
                               ),
                             ),
                             onPressed: () {
+                              AudioPlayerHelper.playHeavyClick();
                               Navigator.of(context).push(IntroFirst.route());
                             },
                             child: Container(
