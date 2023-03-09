@@ -7,6 +7,7 @@ import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_world
 
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/impact_goal_worlds.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble_static.dart';
+import 'package:givt_app_kids_game/utils/audia_player_helper.dart';
 
 class ImpactGoalWorldScreen extends StatefulWidget {
   ImpactGoalWorldScreen({
@@ -55,7 +56,7 @@ class _ImpactGoalWorldScreenState extends State<ImpactGoalWorldScreen> {
                 width: 750,
                 height: 82,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: AudioPlayerHelper.playHeavyClick,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0A3C5F),
                     shape: RoundedRectangleBorder(
@@ -82,6 +83,7 @@ class _ImpactGoalWorldScreenState extends State<ImpactGoalWorldScreen> {
             bottom: 10,
             child: GestureDetector(
               onTap: () {
+                AudioPlayerHelper.playLightClick();
                 Navigator.of(context)
                     .push<ImpactGoalWorlds>(
                   ImpactGoalWorldSelectionScreen.route(),

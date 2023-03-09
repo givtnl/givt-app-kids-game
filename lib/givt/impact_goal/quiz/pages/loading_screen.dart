@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_single_quotes
 
 import 'package:flutter/material.dart';
+import 'package:givt_app_kids_game/utils/audia_player_helper.dart';
 
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:lottie/lottie.dart';
@@ -36,6 +37,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
+
+    AudioPlayerHelper.playEffect();
 
     Future.delayed(
       Duration(seconds: 3),

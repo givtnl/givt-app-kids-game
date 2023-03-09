@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/discover_world_page.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/enter_username_page_2.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble.dart';
+import 'package:givt_app_kids_game/utils/audia_player_helper.dart';
 
 class IntroFinal extends StatelessWidget {
   const IntroFinal({super.key});
@@ -44,9 +45,10 @@ class IntroFinal extends StatelessWidget {
             top: 430,
             left: 400,
             child: ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                EnterUsernameGalaxyScreen.route(),
-              ),
+              onPressed: () {
+                AudioPlayerHelper.playHeavyClick();
+                Navigator.of(context).push(EnterUsernameGalaxyScreen.route());
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFFFB059),
                 shape: RoundedRectangleBorder(
