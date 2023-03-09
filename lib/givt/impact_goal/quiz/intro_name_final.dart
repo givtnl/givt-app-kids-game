@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/pages/discover_page.dart';
 import 'package:givt_app_kids_game/givt/impact_goal/quiz/widgets/givy_bubble.dart';
@@ -58,9 +59,11 @@ help first, can you answer some questions?'''
             top: 400,
             left: 350,
             child: ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                DiscoverPage.route(),
-              ),
+              onPressed: () {
+                HapticFeedback.heavyImpact();
+
+                Navigator.of(context).push(DiscoverPage.route());
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFFFB059),
                 shape: RoundedRectangleBorder(

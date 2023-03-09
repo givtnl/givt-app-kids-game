@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -47,6 +48,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
   ];
 
   void nextStage() {
+    HapticFeedback.heavyImpact();
+
     if (stage == 4) {
       int maxValue = 0;
       String outcome = '';
@@ -118,6 +121,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       stage: stage,
                       isSelected: selectedGoal == goal,
                       onPressed: () {
+                        HapticFeedback.lightImpact();
+
                         setState(() {
                           selectedGoal = goal == selectedGoal ? '' : goal;
                         });
