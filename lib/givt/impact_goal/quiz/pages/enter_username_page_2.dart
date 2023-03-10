@@ -40,6 +40,12 @@ class _EnterUsernameGalaxyScreenState extends State<EnterUsernameGalaxyScreen> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
