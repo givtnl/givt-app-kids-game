@@ -20,7 +20,7 @@ class StartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GIVT Kids Game'),
+        title: const Text('GIVT Kids Game Starter Page'),
       ),
       body: const SafeArea(child: TitleView()),
     );
@@ -41,10 +41,9 @@ class TitleView extends StatelessWidget {
             height: 64,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context)
-                    .push<void>(EnterUsernameScreenVar1.route());
+                Navigator.of(context).push<void>(NameChoice.route());
               },
-              child: const Center(child: Text("Idea 1")),
+              child: const Center(child: Text("Impact Goal")),
             ),
           ),
           const SizedBox(
@@ -55,9 +54,9 @@ class TitleView extends StatelessWidget {
             height: 64,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(IntroFirst.route());
+                // Navigator.of(context).push(IntroFirst.route());
               },
-              child: const Center(child: Text("Idea 2/Variant 1")),
+              child: const Center(child: Text("World Overview V1")),
             ),
           ),
           const SizedBox(
@@ -68,7 +67,7 @@ class TitleView extends StatelessWidget {
             height: 64,
             child: ElevatedButton(
               onPressed: () {},
-              child: const Center(child: Text("Idea 2/Variant 2")),
+              child: const Center(child: Text("World Overview V2")),
             ),
           ),
           const SizedBox(
@@ -78,10 +77,8 @@ class TitleView extends StatelessWidget {
             width: 250,
             height: 64,
             child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push<void>(EnterUsernameScreen.route());
-              },
-              child: const Center(child: Text("Idea 3")),
+              onPressed: () {},
+              child: const Center(child: Text("Mini-game #1")),
             ),
           ),
           const SizedBox(
@@ -91,10 +88,8 @@ class TitleView extends StatelessWidget {
             width: 250,
             height: 64,
             child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push<void>(NameChoice.route());
-              },
-              child: const Center(child: Text("Choose Name")),
+              onPressed: () {},
+              child: const Center(child: Text("Mini-game #2")),
             ),
           ),
           const SizedBox(
